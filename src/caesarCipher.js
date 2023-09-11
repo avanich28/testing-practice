@@ -8,12 +8,11 @@ export function caesarCipher(str) {
   )
     return "No characters";
 
-  const indexArr = str
+  const cipher = str
     .split("")
-    .map((char) => (chars.includes(char) ? chars.indexOf(char) : char));
-
-  const cipher = indexArr
-    .map((index) => (typeof index === "number" ? chars[index + 1] : index))
+    .map((char) =>
+      chars.includes(char) ? chars[chars.indexOf(char) + 1] : char
+    )
     .join("");
 
   return cipher;
